@@ -17,6 +17,8 @@ import java.util.Scanner;
  * @author srinivsi date:March 8th
  */
 public class Status {
+    
+    private statusCodes status;
 
     /**
      * @param args the command line arguments
@@ -26,8 +28,33 @@ public class Status {
     Scanner in =new Scanner(System.in);
     System.out.println("Enter the user status code (zero,one,two,three) in string");
     String code = in.next();
+    setStatusCodes(String code);
     StausUser t= new StausUser();
     t.statusDetail(code); 
     }
+
+    /**
+     *
+     */
+    public enum statusCodes 
+    {
+        ZERO, ONE, TWO, THREE
+    }
     
+    public statusCodes getStatusCode()
+    {
+        return status;
+    }
+    
+    public void setStatusCodes()
+    {
+        if(code == "zero")
+            code = statusCodes.ZERO;
+        if(code == "one")
+            code = statusCodes.ONE;
+        if(code == "two")
+            code = statusCodes.TWO;
+        if(code == "three")
+            code = statusCodes.THREE;
+    }
 }
